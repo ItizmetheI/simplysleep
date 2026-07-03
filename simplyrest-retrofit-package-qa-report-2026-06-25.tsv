@@ -1,0 +1,45 @@
+status	artifact	check	detail
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	file exists	found
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	file exists	found
+pass	simplyrest_phase1_retrofit_batch.php	file exists	found
+pass	simplyrest_retrofit_live_qa_checker.py	file exists	found
+pass	simplyrest-phase1-retrofit-batch-instructions-2026-06-25.md	file exists	found
+pass	simplyrest-retrofit-live-qa-report-2026-06-25.tsv	file exists	found
+pass	simplyrest-retrofit-live-qa-baseline-2026-06-25.md	file exists	found
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	row count	122 rows
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	unique slugs	all slugs unique
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	slug format	all slugs are root-level lowercase slugs
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	brief filename alignment	brief filenames match slugs
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	page types	all page types valid
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	priorities	all priorities valid
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	claim-sensitive priority alignment	claim-sensitive rows use P1-claim-sensitive
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	claim-sensitive slug coverage	risk slugs are claim-sensitive
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	columns	required columns present
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	link row coverage	466 rows
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	source URLs	all source URLs are simplyrest.com https URLs
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	target URLs	all target URLs are approved rollout targets
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	private/risky markers	none found
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	required cell values	all required cells filled
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	claim-sensitive source alignment	claim-sensitive link sources align with manifest
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	methodology link per source	every source has a How We Test route
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	P0 link priorities	P0 rows present
+pass	simplyrest_phase1_retrofit_batch.php	retrofit module marker	present
+pass	simplyrest_phase1_retrofit_batch.php	affiliate disclosure module	present
+pass	simplyrest_phase1_retrofit_batch.php	medical limitation module	present
+pass	simplyrest_phase1_retrofit_batch.php	lab link	present
+pass	simplyrest_phase1_retrofit_batch.php	methodology link	present
+pass	simplyrest_phase1_retrofit_batch.php	retrofit JSON-LD meta	present
+pass	simplyrest_phase1_retrofit_batch.php	no canonical or redirect writes	no canonical/redirect writes found
+pass	simplyrest_retrofit_live_qa_checker.py	risky claim checks	present
+pass	simplyrest_retrofit_live_qa_checker.py	schema checks	present
+pass	simplyrest_retrofit_live_qa_checker.py	schema entity issue output	present
+pass	simplyrest_retrofit_live_qa_checker.py	schema entity validation	present
+pass	simplyrest_retrofit_live_qa_checker.py	Article relationship validation	present
+pass	simplyrest_retrofit_live_qa_checker.py	Breadcrumb relationship validation	present
+pass	simplyrest_retrofit_live_qa_checker.py	FAQ content alignment validation	present
+pass	simplyrest_retrofit_live_qa_checker.py	Person entity validation	present
+pass	simplyrest_retrofit_live_qa_checker.py	Organization entity validation	present
+pass	simplyrest_retrofit_live_qa_checker.py	medical limitation detection	present
+pass	simplyrest-retrofit-live-qa-report-2026-06-25.tsv	row count matches manifest	122 rows
+pass	simplyrest-retrofit-live-qa-report-2026-06-25.tsv	slug set matches manifest	slug sets match
+pass	simplyrest-retrofit-live-qa-report-2026-06-25.tsv	schema entity issue column	present

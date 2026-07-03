@@ -1,0 +1,513 @@
+status	artifact	check	detail
+pass	simplyrest_phase1_wp_cli_import.php	file exists	found
+pass	simplyrest_phase1_wp_preflight.php	file exists	found
+pass	simplyrest_phase1_wp_rollback.php	file exists	found
+pass	simplyrest_phase1_jsonld_renderer_mu_plugin.php	file exists	found
+pass	simplyrest_phase1_live_qa_checker.py	file exists	found
+pass	simplyrest_phase1_launch_gate.php	file exists	found
+pass	simplyrest_phase1_as3_redirect_cleanup.php	file exists	found
+pass	simplyrest_phase1_as3_media_import.php	file exists	found
+pass	simplyrest_phase1_lab_media_import.php	file exists	found
+pass	simplyrest_phase1_retrofit_batch.php	file exists	found
+pass	simplyrest_retrofit_live_qa_checker.py	file exists	found
+pass	simplyrest_retrofit_package_qa.py	file exists	found
+pass	simplyrest_phase1_package_qa.py	file exists	found
+pass	simplyrest_phase1_goal_completion_audit.py	file exists	found
+pass	simplyrest_phase1_local_readiness.py	file exists	found
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	file exists	found
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.md	file exists	found
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	file exists	found
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.md	file exists	found
+pass	simplyrest-phase1-package-qa-instructions-2026-06-25.md	file exists	found
+fail	simplyrest-retrofit-package-qa-instructions-2026-06-25.md	file exists	missing
+fail	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	file exists	missing
+pass	simplyrest-as3-optimized-media-2026-06-25.zip	file exists	found
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv	file exists	found
+pass	simplyrest-as3-media-section-replacement-2026-06-25.html	file exists	found
+pass	simplyrest-lab-proof-media-2026-06-25.zip	file exists	found
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv	file exists	found
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv	file exists	found
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.json	file exists	found
+pass	simplyrest-official-source-content-pack-2026-06-25.zip	file exists	found
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	file exists	found
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.md	file exists	found
+pass	simplyrest-retrofit-slug-manifest-2026-06-25.tsv	file exists	found
+pass	simplyrest-122-url-retrofit-implementation-tracker-2026-06-25.tsv	file exists	found
+pass	simplyrest-internal-linking-map-2026-06-25.tsv	file exists	found
+pass	simplyrest-retrofit-and-linking-operator-brief-2026-06-25.md	file exists	found
+pass	simplyrest-retrofit-gutenberg-block-library-2026-06-25.html	file exists	found
+pass	simplyrest-retrofit-live-qa-instructions-2026-06-25.md	file exists	found
+pass	simplyrest-retrofit-live-qa-report-2026-06-25.tsv	file exists	found
+pass	simplyrest-retrofit-live-qa-baseline-2026-06-25.md	file exists	found
+pass	simplyrest-retrofit-package-qa-report-2026-06-25.tsv	file exists	found
+pass	simplyrest-phase1-static-preview-package-2026-06-25.zip	file exists	found
+fail	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	zip readable	deploy bundle is missing
+pass	simplyrest_phase1_wp_cli_import.php	snapshot controls	pre-import snapshot controls present
+pass	simplyrest_phase1_wp_cli_import.php	priority page count	5 pages embedded
+pass	simplyrest_phase1_wp_cli_import.php	priority page paths	paths match launch set
+pass	importer:mattress-lab	canonical	matches target URL
+pass	importer:mattress-lab	meta title	present
+pass	importer:mattress-lab	meta description	present
+pass	importer:mattress-lab	meta description length	165 chars or fewer
+pass	importer:mattress-lab	author display	Ferdie/Firdous present
+pass	importer:mattress-lab	lead tester meta	Ferdie/Firdous present
+pass	importer:mattress-lab	schema type coverage	types present: Answer; Article; BreadcrumbList; FAQPage; ListItem; Organization; Person; Question; WebPage
+pass	importer:mattress-lab	schema object	schema is an object
+pass	importer:mattress-lab	schema context	schema.org context
+pass	importer:mattress-lab	schema graph	6 graph nodes
+pass	importer:mattress-lab	schema duplicate ids	none found
+pass	importer:mattress-lab	WebPage node	present
+pass	importer:mattress-lab	page node id	matches canonical #webpage
+pass	importer:mattress-lab	page node url	matches canonical
+pass	importer:mattress-lab	Person node	present
+pass	importer:mattress-lab	Person id	Ferdie person id
+pass	importer:mattress-lab	Person name	Firdous present
+pass	importer:mattress-lab	Person alternate name	Ferdie present
+pass	importer:mattress-lab	Person job title	lead hands-on tester present
+pass	importer:mattress-lab	Organization node	present
+pass	importer:mattress-lab	Organization id	Simply Rest organization id
+pass	importer:mattress-lab	Organization url	Simply Rest home URL
+pass	importer:mattress-lab	Article author	references Ferdie
+pass	importer:mattress-lab	Article publisher	references Simply Rest
+pass	importer:mattress-lab	Article mainEntityOfPage	references page node
+pass	importer:mattress-lab	BreadcrumbList node	present
+pass	importer:mattress-lab	Breadcrumb items	2 items
+pass	importer:mattress-lab	Breadcrumb terminal URL	matches canonical
+pass	importer:mattress-lab	FAQPage node	present
+pass	importer:mattress-lab	FAQ question count	3 questions
+pass	importer:mattress-lab	FAQ answer completeness	all questions have answers
+pass	importer:mattress-lab	FAQ content alignment	FAQ questions appear in page content
+pass	importer:mattress-lab	content markers	required markers present
+pass	importer:mattress-lab	required internal links	required links present
+pass	importer:mattress-lab	affiliate disclosure	present
+pass	importer:mattress-lab	medical limitation	present
+pass	importer:mattress-lab	forbidden public markers	none found
+pass	importer:how-we-test-mattresses	canonical	matches target URL
+pass	importer:how-we-test-mattresses	meta title	present
+pass	importer:how-we-test-mattresses	meta description	present
+pass	importer:how-we-test-mattresses	meta description length	165 chars or fewer
+pass	importer:how-we-test-mattresses	author display	Ferdie/Firdous present
+pass	importer:how-we-test-mattresses	lead tester meta	Ferdie/Firdous present
+pass	importer:how-we-test-mattresses	schema type coverage	types present: Answer; Article; BreadcrumbList; FAQPage; ListItem; Organization; Person; Question; WebPage
+pass	importer:how-we-test-mattresses	schema object	schema is an object
+pass	importer:how-we-test-mattresses	schema context	schema.org context
+pass	importer:how-we-test-mattresses	schema graph	6 graph nodes
+pass	importer:how-we-test-mattresses	schema duplicate ids	none found
+pass	importer:how-we-test-mattresses	WebPage node	present
+pass	importer:how-we-test-mattresses	page node id	matches canonical #webpage
+pass	importer:how-we-test-mattresses	page node url	matches canonical
+pass	importer:how-we-test-mattresses	Person node	present
+pass	importer:how-we-test-mattresses	Person id	Ferdie person id
+pass	importer:how-we-test-mattresses	Person name	Firdous present
+pass	importer:how-we-test-mattresses	Person alternate name	Ferdie present
+pass	importer:how-we-test-mattresses	Person job title	lead hands-on tester present
+pass	importer:how-we-test-mattresses	Organization node	present
+pass	importer:how-we-test-mattresses	Organization id	Simply Rest organization id
+pass	importer:how-we-test-mattresses	Organization url	Simply Rest home URL
+pass	importer:how-we-test-mattresses	Article author	references Ferdie
+pass	importer:how-we-test-mattresses	Article publisher	references Simply Rest
+pass	importer:how-we-test-mattresses	Article mainEntityOfPage	references page node
+pass	importer:how-we-test-mattresses	BreadcrumbList node	present
+pass	importer:how-we-test-mattresses	Breadcrumb items	2 items
+pass	importer:how-we-test-mattresses	Breadcrumb terminal URL	matches canonical
+pass	importer:how-we-test-mattresses	FAQPage node	present
+pass	importer:how-we-test-mattresses	FAQ question count	3 questions
+pass	importer:how-we-test-mattresses	FAQ answer completeness	all questions have answers
+pass	importer:how-we-test-mattresses	FAQ content alignment	FAQ questions appear in page content
+pass	importer:how-we-test-mattresses	content markers	required markers present
+pass	importer:how-we-test-mattresses	required internal links	required links present
+pass	importer:how-we-test-mattresses	affiliate disclosure	present
+pass	importer:how-we-test-mattresses	medical limitation	present
+pass	importer:how-we-test-mattresses	forbidden public markers	none found
+pass	importer:ferdie-farhad	canonical	matches target URL
+pass	importer:ferdie-farhad	meta title	present
+pass	importer:ferdie-farhad	meta description	present
+pass	importer:ferdie-farhad	meta description length	165 chars or fewer
+pass	importer:ferdie-farhad	author display	Ferdie/Firdous present
+pass	importer:ferdie-farhad	lead tester meta	Ferdie/Firdous present
+pass	importer:ferdie-farhad	schema type coverage	types present: Answer; BreadcrumbList; FAQPage; ListItem; Organization; Person; ProfilePage; Question
+pass	importer:ferdie-farhad	schema object	schema is an object
+pass	importer:ferdie-farhad	schema context	schema.org context
+pass	importer:ferdie-farhad	schema graph	5 graph nodes
+pass	importer:ferdie-farhad	schema duplicate ids	none found
+pass	importer:ferdie-farhad	ProfilePage node	present
+pass	importer:ferdie-farhad	page node id	matches canonical #webpage
+pass	importer:ferdie-farhad	page node url	matches canonical
+pass	importer:ferdie-farhad	Person node	present
+pass	importer:ferdie-farhad	Person id	Ferdie person id
+pass	importer:ferdie-farhad	Person name	Firdous present
+pass	importer:ferdie-farhad	Person alternate name	Ferdie present
+pass	importer:ferdie-farhad	Person job title	lead hands-on tester present
+pass	importer:ferdie-farhad	Organization node	present
+pass	importer:ferdie-farhad	Organization id	Simply Rest organization id
+pass	importer:ferdie-farhad	Organization url	Simply Rest home URL
+pass	importer:ferdie-farhad	BreadcrumbList node	present
+pass	importer:ferdie-farhad	Breadcrumb items	2 items
+pass	importer:ferdie-farhad	Breadcrumb terminal URL	matches canonical
+pass	importer:ferdie-farhad	FAQPage node	present
+pass	importer:ferdie-farhad	FAQ question count	3 questions
+pass	importer:ferdie-farhad	FAQ answer completeness	all questions have answers
+pass	importer:ferdie-farhad	FAQ content alignment	FAQ questions appear in page content
+pass	importer:ferdie-farhad	content markers	required markers present
+pass	importer:ferdie-farhad	required internal links	required links present
+pass	importer:ferdie-farhad	affiliate disclosure	present
+pass	importer:ferdie-farhad	medical limitation	present
+pass	importer:ferdie-farhad	forbidden public markers	none found
+pass	importer:mattress-reviews	canonical	matches target URL
+pass	importer:mattress-reviews	meta title	present
+pass	importer:mattress-reviews	meta description	present
+pass	importer:mattress-reviews	meta description length	165 chars or fewer
+pass	importer:mattress-reviews	author display	Ferdie/Firdous present
+pass	importer:mattress-reviews	lead tester meta	Ferdie/Firdous present
+pass	importer:mattress-reviews	schema type coverage	types present: Answer; BreadcrumbList; CollectionPage; FAQPage; ItemList; ListItem; Organization; Person; Question
+pass	importer:mattress-reviews	schema object	schema is an object
+pass	importer:mattress-reviews	schema context	schema.org context
+pass	importer:mattress-reviews	schema graph	6 graph nodes
+pass	importer:mattress-reviews	schema duplicate ids	none found
+pass	importer:mattress-reviews	CollectionPage node	present
+pass	importer:mattress-reviews	page node id	matches canonical #webpage
+pass	importer:mattress-reviews	page node url	matches canonical
+pass	importer:mattress-reviews	Person node	present
+pass	importer:mattress-reviews	Person id	Ferdie person id
+pass	importer:mattress-reviews	Person name	Firdous present
+pass	importer:mattress-reviews	Person alternate name	Ferdie present
+pass	importer:mattress-reviews	Person job title	lead hands-on tester present
+pass	importer:mattress-reviews	Organization node	present
+pass	importer:mattress-reviews	Organization id	Simply Rest organization id
+pass	importer:mattress-reviews	Organization url	Simply Rest home URL
+pass	importer:mattress-reviews	BreadcrumbList node	present
+pass	importer:mattress-reviews	Breadcrumb items	2 items
+pass	importer:mattress-reviews	Breadcrumb terminal URL	matches canonical
+pass	importer:mattress-reviews	FAQPage node	present
+pass	importer:mattress-reviews	FAQ question count	3 questions
+pass	importer:mattress-reviews	FAQ answer completeness	all questions have answers
+pass	importer:mattress-reviews	FAQ content alignment	FAQ questions appear in page content
+pass	importer:mattress-reviews	ItemList node	present
+pass	importer:mattress-reviews	ItemList AS3 URL	links AS3 review
+pass	importer:mattress-reviews	content markers	required markers present
+pass	importer:mattress-reviews	required internal links	required links present
+pass	importer:mattress-reviews	affiliate disclosure	present
+pass	importer:mattress-reviews	medical limitation	present
+pass	importer:mattress-reviews	forbidden public markers	none found
+pass	importer:mattress-reviews/amerisleep-as3	canonical	matches target URL
+pass	importer:mattress-reviews/amerisleep-as3	meta title	present
+pass	importer:mattress-reviews/amerisleep-as3	meta description	present
+pass	importer:mattress-reviews/amerisleep-as3	meta description length	165 chars or fewer
+pass	importer:mattress-reviews/amerisleep-as3	author display	Ferdie/Firdous present
+pass	importer:mattress-reviews/amerisleep-as3	lead tester meta	Ferdie/Firdous present
+pass	importer:mattress-reviews/amerisleep-as3	schema type coverage	types present: Answer; Article; Brand; BreadcrumbList; FAQPage; ListItem; Organization; Person; Product; Question; Rating; Review; WebPage
+pass	importer:mattress-reviews/amerisleep-as3	schema object	schema is an object
+pass	importer:mattress-reviews/amerisleep-as3	schema context	schema.org context
+pass	importer:mattress-reviews/amerisleep-as3	schema graph	8 graph nodes
+pass	importer:mattress-reviews/amerisleep-as3	schema duplicate ids	none found
+pass	importer:mattress-reviews/amerisleep-as3	WebPage node	present
+pass	importer:mattress-reviews/amerisleep-as3	page node id	matches canonical #webpage
+pass	importer:mattress-reviews/amerisleep-as3	page node url	matches canonical
+pass	importer:mattress-reviews/amerisleep-as3	Person node	present
+pass	importer:mattress-reviews/amerisleep-as3	Person id	Ferdie person id
+pass	importer:mattress-reviews/amerisleep-as3	Person name	Firdous present
+pass	importer:mattress-reviews/amerisleep-as3	Person alternate name	Ferdie present
+pass	importer:mattress-reviews/amerisleep-as3	Person job title	lead hands-on tester present
+pass	importer:mattress-reviews/amerisleep-as3	Organization node	present
+pass	importer:mattress-reviews/amerisleep-as3	Organization id	Simply Rest organization id
+pass	importer:mattress-reviews/amerisleep-as3	Organization url	Simply Rest home URL
+pass	importer:mattress-reviews/amerisleep-as3	Article author	references Ferdie
+pass	importer:mattress-reviews/amerisleep-as3	Article publisher	references Simply Rest
+pass	importer:mattress-reviews/amerisleep-as3	Article mainEntityOfPage	references page node
+pass	importer:mattress-reviews/amerisleep-as3	BreadcrumbList node	present
+pass	importer:mattress-reviews/amerisleep-as3	Breadcrumb items	3 items
+pass	importer:mattress-reviews/amerisleep-as3	Breadcrumb terminal URL	matches canonical
+pass	importer:mattress-reviews/amerisleep-as3	FAQPage node	present
+pass	importer:mattress-reviews/amerisleep-as3	FAQ question count	3 questions
+pass	importer:mattress-reviews/amerisleep-as3	FAQ answer completeness	all questions have answers
+pass	importer:mattress-reviews/amerisleep-as3	FAQ content alignment	FAQ questions appear in page content
+pass	importer:mattress-reviews/amerisleep-as3	Review node	present
+pass	importer:mattress-reviews/amerisleep-as3	Product node	present
+pass	importer:mattress-reviews/amerisleep-as3	Review id	matches canonical #review
+pass	importer:mattress-reviews/amerisleep-as3	Review itemReviewed	references AS3 product
+pass	importer:mattress-reviews/amerisleep-as3	Review rating value	10 within 0-10
+pass	importer:mattress-reviews/amerisleep-as3	Review rating bounds	bestRating is 10
+pass	importer:mattress-reviews/amerisleep-as3	Product id	matches canonical #product
+pass	importer:mattress-reviews/amerisleep-as3	Product brand	Amerisleep
+pass	importer:mattress-reviews/amerisleep-as3	Article about	references AS3 product
+pass	importer:mattress-reviews/amerisleep-as3	content markers	required markers present
+pass	importer:mattress-reviews/amerisleep-as3	required internal links	required links present
+pass	importer:mattress-reviews/amerisleep-as3	affiliate disclosure	present
+pass	importer:mattress-reviews/amerisleep-as3	medical limitation	present
+pass	importer:mattress-reviews/amerisleep-as3	forbidden public markers	none found
+pass	simplyrest_phase1_live_qa_checker.py	entity/media validation markers	all required live QA markers present
+pass	simplyrest_phase1_live_qa_checker.py	live fetch and pass gate	curl fetch and overall pass gate present
+pass	simplyrest_phase1_live_qa_checker.py	private-link guard	private-link guard present
+pass	simplyrest_phase1_goal_completion_audit.py	required audit markers	all required controls present
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	report fields	fields match expected audit schema
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	requirement id coverage	all launch requirements covered
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	evidence files populated	each audit row cites evidence files
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	production completion guard	report preserves production-blocked state when live QA is failing
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	core proof page live blocker	core proof page requirement remains production_blocked
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	launch QA live blocker	launch QA requirement remains production_blocked
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.tsv	Ferdie candidate approval gate	candidate media remains approval-gated
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.md	markdown no-go summary	no-go summary present when blockers exist
+pass	simplyrest-phase1-goal-completion-audit-2026-06-25.md	markdown sections	blocking and next-action sections present
+pass	simplyrest_phase1_local_readiness.py	required readiness markers	all required controls present
+pass	simplyrest_phase1_local_readiness.py	subprocess shell safety	does not use shell=True
+pass	simplyrest_phase1_local_readiness.py	live blocker handling	live QA nonzero results become blockers
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	report fields	fields match expected readiness schema
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step phase_one_package_qa	present
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step retrofit_package_qa	present
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step completion_audit	present
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step deploy_bundle_integrity	present
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step completion_audit_summary	present
+pass	simplyrest-phase1-local-readiness-report-2026-06-25.md	markdown sections	go/no-go and blocking sections present
+pass	simplyrest_phase1_launch_gate.php	required gate markers	all required controls present
+pass	simplyrest_phase1_launch_gate.php	read-only write markers	no write APIs found
+pass	simplyrest_phase1_launch_gate.php	gate check count	20 or more pass/fail checks
+pass	simplyrest_phase1_launch_gate.php	AS3 redirect guard	AS3 redirect guard present
+pass	simplyrest_phase1_wp_rollback.php	required rollback markers	all required rollback controls present
+pass	simplyrest_phase1_wp_rollback.php	page deletion markers	no page delete/trash markers found
+pass	simplyrest_phase1_wp_rollback.php	explicit apply flag	apply flag required
+pass	simplyrest_phase1_wp_rollback.php	dry-run default behavior	dry-run and apply paths present
+pass	simplyrest_phase1_wp_rollback.php	rollback target mattress-lab	target path present
+pass	simplyrest_phase1_wp_rollback.php	rollback target how-we-test-mattresses	target path present
+pass	simplyrest_phase1_wp_rollback.php	rollback target ferdie-farhad	target path present
+pass	simplyrest_phase1_wp_rollback.php	rollback target mattress-reviews	target path present
+pass	simplyrest_phase1_wp_rollback.php	rollback target mattress-reviews/amerisleep-as3	target path present
+pass	simplyrest_phase1_as3_redirect_cleanup.php	required cleanup markers	all required controls present
+pass	simplyrest_phase1_as3_redirect_cleanup.php	destructive markers	no destructive SQL/post deletes found
+pass	simplyrest_phase1_as3_redirect_cleanup.php	explicit apply flag	apply flag required
+pass	simplyrest_phase1_as3_redirect_cleanup.php	dry-run default behavior	dry-run and apply paths present
+pass	simplyrest_phase1_as3_redirect_cleanup.php	narrow AS3 target check	requires AS3 and best-online markers
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv	media manifest rows	13 rows
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv	media file set	matches expected AS3 assets
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv	media token set	matches expected tokens
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row2	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row3	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row4	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row4	video duration	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row5	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row6	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row6	video duration	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row7	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row8	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row8	video duration	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row9	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row10	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row11	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row12	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row13	required metadata	present
+pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv:row14	required metadata	present
+pass	simplyrest-as3-optimized-media-2026-06-25.zip	zip integrity	all files readable
+pass	simplyrest-as3-optimized-media-2026-06-25.zip	zip file set	matches manifest assets
+pass	simplyrest-as3-media-section-replacement-2026-06-25.html	section tokens	all expected tokens present
+pass	simplyrest-as3-media-section-replacement-2026-06-25.html	video blocks	3 or more video blocks
+pass	simplyrest-as3-media-section-replacement-2026-06-25.html	forbidden public markers	none found
+pass	simplyrest_phase1_lab_media_import.php	required importer markers	all required controls present
+pass	simplyrest_phase1_lab_media_import.php	published-page guard	update path and force flag present
+pass	simplyrest_phase1_lab_media_import.php	media upload metadata	upload and alt metadata present
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv	lab media manifest rows	5 rows
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv	lab media file set	matches expected lab proof assets
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row2	required metadata	present
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row2	approval status	deployable_rebrand_crop
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row2	media type	image
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row3	required metadata	present
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row3	approval status	deployable_rebrand_crop
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row3	media type	image
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row4	required metadata	present
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row4	approval status	deployable_user_supplied_headshot
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row4	media type	image
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row5	required metadata	present
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row5	approval status	deployable_user_supplied_headshot
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row5	media type	image
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row6	required metadata	present
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row6	approval status	candidate_requires_approval
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row6	media type	image
+pass	simplyrest-lab-proof-media-upload-manifest-2026-06-25.tsv:row6	candidate approval note	approval note present
+pass	simplyrest-lab-proof-media-2026-06-25.zip	zip integrity	all files readable
+pass	simplyrest-lab-proof-media-2026-06-25.zip	zip file set	matches manifest assets
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv	fieldnames	scoring fields match source matrix
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv	row count	23 mattress score rows
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv	required models	required scoring models present
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Overall score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Value score	9
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Edge Support score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Trial Period score	9
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Response Time score	9
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Motion Transfer score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3	Cooling & Breathability score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS3 Hybrid	Overall score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Zoma Boost	Overall score	10
+pass	"simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Nolah Evolution 15"""	Overall score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Saatva Classic	Overall score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:Amerisleep AS6 Black Series	Overall score	10
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row2	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row3	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row4	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row5	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row6	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row7	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row8	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row9	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row10	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row11	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row12	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row13	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row14	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row15	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row16	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row17	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row18	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row19	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row20	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row21	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row22	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row23	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Overall valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Value valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Edge Support valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Trial Period valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Response Time valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Motion Transfer valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.tsv:row24	Cooling & Breathability valid	1-10 score
+pass	simplyrest-mattress-scoring-matrix-2026-06-25.json	json parity	JSON row count matches TSV
+pass	simplyrest_phase1_wp_cli_import.php	score database table	Lab page includes score database
+pass	simplyrest_phase1_wp_cli_import.php	AS3 visible score	AS3 page shows 10/10
+pass	simplyrest_phase1_wp_cli_import.php	AS3 review rating	Review schema ratingValue is 10
+pass	simplyrest-official-source-content-pack-2026-06-25.zip	zip integrity	all files readable
+pass	simplyrest-official-source-content-pack-2026-06-25.zip	required source files	official source evidence files present
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	content row count	46 rows
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	fact row count	42 rows
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	remaining QA row count	32 rows
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	placeholder scan	0 placeholder rows after official-source update
+pass	simplyrest-official-source-content-pack-summary-2026-06-25.md	publish gate markers	required source-pack gates present
+warn	simplyrest-phase1-static-preview-2026-06-25	static preview directory	missing; regenerate before visual QA

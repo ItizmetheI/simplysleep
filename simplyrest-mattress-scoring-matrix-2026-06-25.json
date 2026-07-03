@@ -1,0 +1,232 @@
+[
+  {
+    "Model": "Amerisleep AS3",
+    "Overall": 10,
+    "Value": 9,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Amerisleep AS3 Hybrid",
+    "Overall": 10,
+    "Value": 9,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Amerisleep AS2",
+    "Overall": 9,
+    "Value": 9,
+    "Edge Support": 8,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Amerisleep AS5",
+    "Overall": 9,
+    "Value": 8,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 8,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Amerisleep AS5 Hybrid",
+    "Overall": 9,
+    "Value": 8,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 8,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Amerisleep Organica",
+    "Overall": 9,
+    "Value": 9,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Amerisleep Organica (Plush)",
+    "Overall": 9,
+    "Value": 8,
+    "Edge Support": 8,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Zoma Boost",
+    "Overall": 10,
+    "Value": 10,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Zoma Start",
+    "Overall": 9,
+    "Value": 10,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 8,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Zoma Hybrid",
+    "Overall": 9,
+    "Value": 10,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Nolah Natural 11\"",
+    "Overall": 8,
+    "Value": 9,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 8,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Nolah Evolution 15\"",
+    "Overall": 10,
+    "Value": 10,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Vaya Hybrid",
+    "Overall": 8,
+    "Value": 10,
+    "Edge Support": 8,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 8,
+    "Cooling & Breathability": 8
+  },
+  {
+    "Model": "Vaya Foam",
+    "Overall": 8,
+    "Value": 10,
+    "Edge Support": 7,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 8
+  },
+  {
+    "Model": "Nest Bedding Sparrow",
+    "Overall": 10,
+    "Value": 8,
+    "Edge Support": 10,
+    "Trial Period": 10,
+    "Response Time": 9,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Brooklyn Bedding Aurora Luxe",
+    "Overall": 9,
+    "Value": 9,
+    "Edge Support": 8,
+    "Trial Period": 9,
+    "Response Time": 8,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Birch Natural",
+    "Overall": 8,
+    "Value": 9,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 8,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Bear Star Hybrid",
+    "Overall": 9,
+    "Value": 9,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 8,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "GhostBed Luxe",
+    "Overall": 7,
+    "Value": 8,
+    "Edge Support": 8,
+    "Trial Period": 9,
+    "Response Time": 6,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Purple RestorePlus Hybrid",
+    "Overall": 9,
+    "Value": 7,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 10,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Saatva Classic",
+    "Overall": 10,
+    "Value": 7,
+    "Edge Support": 10,
+    "Trial Period": 10,
+    "Response Time": 10,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 9
+  },
+  {
+    "Model": "Helix Midnight Luxe",
+    "Overall": 9,
+    "Value": 7,
+    "Edge Support": 10,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 9,
+    "Cooling & Breathability": 10
+  },
+  {
+    "Model": "Amerisleep AS6 Black Series",
+    "Overall": 10,
+    "Value": 9,
+    "Edge Support": 9,
+    "Trial Period": 9,
+    "Response Time": 9,
+    "Motion Transfer": 10,
+    "Cooling & Breathability": 10
+  }
+]

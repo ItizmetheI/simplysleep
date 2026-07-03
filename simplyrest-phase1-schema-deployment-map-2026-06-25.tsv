@@ -1,0 +1,6 @@
+Target URL	Schema file	Required schema types	Deploy note
+https://simplyrest.com/mattress-lab/	wordpress-deploy/schema/mattress-lab-schema.json	WebPage; Article; FAQPage; BreadcrumbList; Person; Organization	Add JSON-LD through SEO plugin custom schema field or page-level header injection.
+https://simplyrest.com/how-we-test-mattresses/	wordpress-deploy/schema/how-we-test-schema.json	WebPage; Article; FAQPage; BreadcrumbList; Person; Organization	Add JSON-LD after page copy is final; validate rendered page source.
+https://simplyrest.com/ferdie-farhad/	wordpress-deploy/schema/ferdie-farhad-schema.json	ProfilePage; Person; FAQPage; BreadcrumbList; Organization	Keep Ferdie title as author and lead hands-on tester unless credentials are separately approved.
+https://simplyrest.com/mattress-reviews/	wordpress-deploy/schema/mattress-reviews-hub-schema.json	CollectionPage; ItemList; FAQPage; BreadcrumbList; Person; Organization	ItemList should include only published review URLs.
+https://simplyrest.com/mattress-reviews/amerisleep-as3/	wordpress-deploy/schema/review-amerisleep-as3-schema.json	WebPage; Review; Product; Article; FAQPage; BreadcrumbList; Person; Organization	Do not validate until the redirect to /best-online-mattress/ is removed and the page renders at the canonical URL.

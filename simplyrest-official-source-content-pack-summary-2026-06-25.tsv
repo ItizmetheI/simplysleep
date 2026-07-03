@@ -1,0 +1,9 @@
+metric	value	note
+content_status_rows	46	Rows in CONTENT_GENERATION_STATUS.csv
+ready_for_qa_markdown_files	46	Markdown files under wordpress_content_ready_for_qa
+official_product_fact_rows	42	Rows in OFFICIAL_PRODUCT_FACT_DATABASE.csv
+official_source_register_rows	39	Rows in OFFICIAL_SOURCE_REGISTER.csv
+remaining_cms_qa_rows	32	Rows in FINAL_CMS_QA_REMAINING_ITEMS.csv
+placeholder_rows_after_update	0	Rows found by PLACEHOLDER_SCAN_AFTER_OFFICIAL_SOURCE_UPDATE.csv; header-only file means no placeholder rows found
+status_breakdown	official_source_content_generated=46	Generated content status values
+content_type_breakdown	comparisons=24; foundation=4; merge_source_only=2; pages=10; reviews=6	Content groups in official source pack
