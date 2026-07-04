@@ -18,8 +18,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUTS = ROOT / "outputs"
+ROOT = Path(__file__).resolve().parent
+OUTPUTS = ROOT
 
 MANIFEST = OUTPUTS / "simplyrest-retrofit-slug-manifest-2026-06-25.tsv"
 INTERNAL_LINKING_MAP = OUTPUTS / "simplyrest-internal-linking-map-2026-06-25.tsv"

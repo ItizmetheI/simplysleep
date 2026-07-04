@@ -19,8 +19,8 @@ from pathlib import Path
 from typing import Any
 
 
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUTS = ROOT / "outputs"
+ROOT = Path(__file__).resolve().parent
+OUTPUTS = ROOT
 
 IMPORTER = OUTPUTS / "simplyrest_phase1_wp_cli_import.php"
 LIVE_QA = OUTPUTS / "simplyrest_phase1_live_qa_checker.py"

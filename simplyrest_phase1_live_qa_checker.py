@@ -39,51 +39,51 @@ class PageRequirement:
 PAGES = (
     PageRequirement(
         name="Mattress Lab",
-        url="http://localhost:8080/mattress-lab/",
-        expected_final_url="http://localhost:8080/mattress-lab/",
+        url="https://simplyrest.com/mattress-lab/",
+        expected_final_url="https://simplyrest.com/mattress-lab/",
         required_schema_types=("WebPage", "Article", "FAQPage", "BreadcrumbList", "Person", "Organization"),
         required_markers=("Simply Rest Lab", "Firdous", "Ferdie", "lead hands-on tester"),
         required_links=(
-            "http://localhost:8080/how-we-test-mattresses/",
-            "http://localhost:8080/ferdie-farhad/",
-            "http://localhost:8080/mattress-reviews/",
+            "https://simplyrest.com/how-we-test-mattresses/",
+            "https://simplyrest.com/ferdie-farhad/",
+            "https://simplyrest.com/mattress-reviews/",
         ),
     ),
     PageRequirement(
         name="How We Test Mattresses",
-        url="http://localhost:8080/how-we-test-mattresses/",
-        expected_final_url="http://localhost:8080/how-we-test-mattresses/",
+        url="https://simplyrest.com/how-we-test-mattresses/",
+        expected_final_url="https://simplyrest.com/how-we-test-mattresses/",
         required_schema_types=("WebPage", "Article", "FAQPage", "BreadcrumbList", "Person", "Organization"),
         required_markers=("How We Test Mattresses", "pressure relief", "spinal alignment", "motion isolation", "edge support"),
-        required_links=("http://localhost:8080/how-we-test-mattresses/",),
+        required_links=("https://simplyrest.com/how-we-test-mattresses/",),
     ),
     PageRequirement(
         name="Ferdie Farhad",
-        url="http://localhost:8080/ferdie-farhad/",
-        expected_final_url="http://localhost:8080/ferdie-farhad/",
+        url="https://simplyrest.com/ferdie-farhad/",
+        expected_final_url="https://simplyrest.com/ferdie-farhad/",
         required_schema_types=("ProfilePage", "Person", "FAQPage", "BreadcrumbList", "Organization"),
         required_markers=("Firdous", "Ferdie", "lead hands-on tester", "author"),
-        required_links=("http://localhost:8080/how-we-test-mattresses/",),
+        required_links=("https://simplyrest.com/how-we-test-mattresses/",),
         requires_visible_media=True,
     ),
     PageRequirement(
         name="Mattress Reviews Hub",
-        url="http://localhost:8080/mattress-reviews/",
-        expected_final_url="http://localhost:8080/mattress-reviews/",
+        url="https://simplyrest.com/mattress-reviews/",
+        expected_final_url="https://simplyrest.com/mattress-reviews/",
         required_schema_types=("CollectionPage", "ItemList", "FAQPage", "BreadcrumbList", "Person", "Organization"),
         required_markers=("Mattress Reviews", "Simply Rest Lab", "Amerisleep AS3"),
         required_links=(
-            "http://localhost:8080/mattress-reviews/amerisleep-as3/",
-            "http://localhost:8080/how-we-test-mattresses/",
+            "https://simplyrest.com/mattress-reviews/amerisleep-as3/",
+            "https://simplyrest.com/how-we-test-mattresses/",
         ),
     ),
     PageRequirement(
         name="Amerisleep AS3 Review",
-        url="http://localhost:8080/mattress-reviews/amerisleep-as3/",
-        expected_final_url="http://localhost:8080/mattress-reviews/amerisleep-as3/",
+        url="https://simplyrest.com/mattress-reviews/amerisleep-as3/",
+        expected_final_url="https://simplyrest.com/mattress-reviews/amerisleep-as3/",
         required_schema_types=("WebPage", "Review", "Product", "Article", "FAQPage", "BreadcrumbList", "Person", "Organization"),
         required_markers=("Amerisleep AS3", "Simply Rest Lab Score", "Testing Evidence", "Ferdie"),
-        required_links=("http://localhost:8080/how-we-test-mattresses/",),
+        required_links=("https://simplyrest.com/how-we-test-mattresses/",),
         requires_as3_media=True,
     ),
 )
@@ -238,8 +238,8 @@ def schema_entity_issues(req: PageRequirement, schemas: list[Any], body: str) ->
     canonical = req.expected_final_url
     canonical_no_trailing = normalize_url(canonical).rstrip("/")
     webpage_id = canonical_no_trailing + "/#webpage"
-    person_id = "http://localhost:8080/ferdie-farhad/#person"
-    organization_id = "http://localhost:8080/#organization"
+    person_id = "https://simplyrest.com/ferdie-farhad/#person"
+    organization_id = "https://simplyrest.com/#organization"
     current_path = page_path(req)
     body_lower = body.lower()
 
@@ -289,7 +289,7 @@ def schema_entity_issues(req: PageRequirement, schemas: list[Any], body: str) ->
         organization = organization_nodes[0]
         if str(organization.get("@id", "")) != organization_id:
             issues.append("Organization @id mismatch")
-        if normalize_url(schema_node_url(organization)) != "http://localhost:8080/":
+        if normalize_url(schema_node_url(organization)) != "https://simplyrest.com/":
             issues.append("Organization url mismatch")
 
     for article in schema_nodes_by_type(nodes, "Article"):
@@ -335,7 +335,7 @@ def schema_entity_issues(req: PageRequirement, schemas: list[Any], body: str) ->
         item_lists = schema_nodes_by_type(nodes, "ItemList")
         if not item_lists:
             issues.append("missing ItemList node")
-        elif "http://localhost:8080/mattress-reviews/amerisleep-as3/" not in json.dumps(item_lists[0]):
+        elif "https://simplyrest.com/mattress-reviews/amerisleep-as3/" not in json.dumps(item_lists[0]):
             issues.append("ItemList missing AS3 review URL")
 
     if current_path == "mattress-reviews/amerisleep-as3":

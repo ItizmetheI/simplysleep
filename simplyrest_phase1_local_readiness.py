@@ -18,8 +18,8 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUTS = ROOT / "outputs"
+ROOT = Path(__file__).resolve().parent
+OUTPUTS = ROOT
 
 PHASE_PACKAGE_QA = OUTPUTS / "simplyrest_phase1_package_qa.py"
 RETROFIT_PACKAGE_QA = OUTPUTS / "simplyrest_retrofit_package_qa.py"

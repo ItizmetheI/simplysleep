@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any
 
 
-BASE_URL = "http://localhost:8080"
+BASE_URL = "https://simplyrest.com"
 
 REQUIRED_SCHEMA_TYPES = ("Article", "FAQPage", "BreadcrumbList", "Person", "Organization")
 
@@ -215,8 +215,8 @@ def schema_entity_issues(page: RetrofitPage, schemas: list[Any], body: str) -> l
     expected_url = page.expected_url
     article_id = schema_node_id(expected_url, "article")
     webpage_id = schema_node_id(expected_url, "webpage")
-    person_id = "http://localhost:8080/ferdie-farhad/#person"
-    organization_id = "http://localhost:8080/#organization"
+    person_id = "https://simplyrest.com/ferdie-farhad/#person"
+    organization_id = "https://simplyrest.com/#organization"
     body_lower = body.lower()
 
     if not schemas:
@@ -268,7 +268,7 @@ def schema_entity_issues(page: RetrofitPage, schemas: list[Any], body: str) -> l
         organization = organization_nodes[0]
         if str(organization.get("@id", "")) != organization_id:
             issues.append("Organization @id mismatch")
-        if normalize_url(schema_node_url(organization)) != "http://localhost:8080/":
+        if normalize_url(schema_node_url(organization)) != "https://simplyrest.com/":
             issues.append("Organization url mismatch")
 
     breadcrumb_nodes = schema_nodes_by_type(nodes, "BreadcrumbList")
