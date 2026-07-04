@@ -89,6 +89,32 @@ PAGES = (
 )
 
 
+DEFAULT_BASE_URL = "https://simplyrest.com"
+
+
+def rebase_pages(pages: tuple[PageRequirement, ...], base_url: str) -> tuple[PageRequirement, ...]:
+    base_url = base_url.rstrip("/")
+
+    def rebase(url: str) -> str:
+        return url.replace(DEFAULT_BASE_URL, base_url)
+
+    return tuple(
+        PageRequirement(
+            name=req.name,
+            url=rebase(req.url),
+            expected_final_url=rebase(req.expected_final_url),
+            required_schema_types=req.required_schema_types,
+            required_markers=req.required_markers,
+            required_links=tuple(rebase(link) for link in req.required_links),
+            requires_affiliate_disclosure=req.requires_affiliate_disclosure,
+            requires_medical_limit=req.requires_medical_limit,
+            requires_visible_media=req.requires_visible_media,
+            requires_as3_media=req.requires_as3_media,
+        )
+        for req in pages
+    )
+
+
 FORBIDDEN_PUBLIC_MARKERS = (
     "drive.google.com",
     "docs.google.com",
@@ -469,9 +495,15 @@ def main() -> int:
         help="TSV report output path",
     )
     parser.add_argument("--timeout", type=int, default=20)
+    parser.add_argument(
+        "--base-url",
+        default=DEFAULT_BASE_URL,
+        help="Base URL to validate, e.g. https://simplyrest.com (default) or http://localhost:8080 for local staging.",
+    )
     args = parser.parse_args()
 
-    rows = [evaluate_page(req, args.timeout) for req in PAGES]
+    pages = rebase_pages(PAGES, args.base_url)
+    rows = [evaluate_page(req, args.timeout) for req in pages]
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open("w", newline="", encoding="utf-8") as f:

@@ -421,6 +421,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def main() -> int:
+    global BASE_URL
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--manifest",
@@ -436,7 +437,14 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--timeout", type=int, default=20)
+    parser.add_argument(
+        "--base-url",
+        default=BASE_URL,
+        help="Base URL to validate, e.g. https://simplyrest.com (default) or http://localhost:8080 for local staging.",
+    )
     args = parser.parse_args()
+
+    BASE_URL = args.base_url.rstrip("/")
 
     manifest = Path(args.manifest)
     pages = filter_pages(load_manifest(manifest), args.priority, args.limit, args.offset)
