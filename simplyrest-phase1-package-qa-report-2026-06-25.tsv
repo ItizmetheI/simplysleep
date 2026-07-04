@@ -19,8 +19,8 @@ pass	simplyrest-phase1-goal-completion-audit-2026-06-25.md	file exists	found
 pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	file exists	found
 pass	simplyrest-phase1-local-readiness-report-2026-06-25.md	file exists	found
 pass	simplyrest-phase1-package-qa-instructions-2026-06-25.md	file exists	found
-fail	simplyrest-retrofit-package-qa-instructions-2026-06-25.md	file exists	missing
-fail	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	file exists	missing
+pass	simplyrest-retrofit-package-qa-instructions-2026-06-25.md	file exists	found
+pass	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	file exists	found
 pass	simplyrest-as3-optimized-media-2026-06-25.zip	file exists	found
 pass	simplyrest-as3-optimized-media-upload-manifest-2026-06-25.tsv	file exists	found
 pass	simplyrest-as3-media-section-replacement-2026-06-25.html	file exists	found
@@ -41,7 +41,8 @@ pass	simplyrest-retrofit-live-qa-report-2026-06-25.tsv	file exists	found
 pass	simplyrest-retrofit-live-qa-baseline-2026-06-25.md	file exists	found
 pass	simplyrest-retrofit-package-qa-report-2026-06-25.tsv	file exists	found
 pass	simplyrest-phase1-static-preview-package-2026-06-25.zip	file exists	found
-fail	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	zip readable	deploy bundle is missing
+pass	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	zip integrity	all files readable
+pass	simplyrest-phase1-wordpress-deploy-bundle-2026-06-25.zip	required bundle files	all required files present
 pass	simplyrest_phase1_wp_cli_import.php	snapshot controls	pre-import snapshot controls present
 pass	simplyrest_phase1_wp_cli_import.php	priority page count	5 pages embedded
 pass	simplyrest_phase1_wp_cli_import.php	priority page paths	paths match launch set
@@ -504,4 +505,16 @@ pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	fact row cou
 pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	remaining QA row count	32 rows
 pass	simplyrest-official-source-content-pack-summary-2026-06-25.tsv	placeholder scan	0 placeholder rows after official-source update
 pass	simplyrest-official-source-content-pack-summary-2026-06-25.md	publish gate markers	required source-pack gates present
-warn	simplyrest-phase1-static-preview-2026-06-25	static preview directory	missing; regenerate before visual QA
+pass	simplyrest-phase1-static-preview-2026-06-25	html page count	6 html files
+pass	static:amerisleep-as3.html	localized AS3 link	no malformed AS3 local link
+pass	static:amerisleep-as3.html	private links	none found
+pass	static:ferdie-farhad.html	localized AS3 link	no malformed AS3 local link
+pass	static:ferdie-farhad.html	private links	none found
+pass	static:how-we-test-mattresses.html	localized AS3 link	no malformed AS3 local link
+pass	static:how-we-test-mattresses.html	private links	none found
+pass	static:index.html	localized AS3 link	no malformed AS3 local link
+pass	static:index.html	private links	none found
+pass	static:mattress-lab.html	localized AS3 link	no malformed AS3 local link
+pass	static:mattress-lab.html	private links	none found
+pass	static:mattress-reviews.html	localized AS3 link	no malformed AS3 local link
+pass	static:mattress-reviews.html	private links	none found

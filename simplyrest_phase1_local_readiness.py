@@ -14,6 +14,7 @@ import csv
 import datetime as dt
 import subprocess
 import sys
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -75,6 +76,21 @@ def run_command(step: str, cmd: list[str], allow_nonzero: bool = False) -> StepR
         command=" ".join(cmd),
         detail=one_line(output),
     )
+
+
+def check_deploy_bundle_integrity() -> StepResult:
+    step = "deploy_bundle_integrity"
+    command = f"zipfile.testzip({DEPLOY_BUNDLE.name})"
+    if not DEPLOY_BUNDLE.exists():
+        return StepResult(step=step, status="fail", exit_code=1, command=command, detail="deploy bundle is missing")
+    try:
+        with zipfile.ZipFile(DEPLOY_BUNDLE) as archive:
+            bad_file = archive.testzip()
+    except zipfile.BadZipFile as exc:
+        return StepResult(step=step, status="fail", exit_code=1, command=command, detail=one_line(str(exc)))
+    if bad_file is not None:
+        return StepResult(step=step, status="fail", exit_code=1, command=command, detail=f"bad member: {bad_file}")
+    return StepResult(step=step, status="pass", exit_code=0, command=command, detail="all files readable")
 
 
 def one_line(text: str, limit: int = 600) -> str:
@@ -243,7 +259,7 @@ def main() -> int:
             [py, "-B", str(GOAL_AUDIT), "--output", str(GOAL_AUDIT_TSV), "--markdown", str(GOAL_AUDIT_MD)],
         )
     )
-    results.append(run_command("deploy_bundle_integrity", ["unzip", "-t", str(DEPLOY_BUNDLE)]))
+    results.append(check_deploy_bundle_integrity())
 
     results = append_report_summaries(results)
     write_tsv(results, Path(args.output))
