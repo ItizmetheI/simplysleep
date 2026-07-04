@@ -459,7 +459,7 @@ class Reporter:
 
     def write(self, output: Path) -> None:
         output.parent.mkdir(parents=True, exist_ok=True)
-        with output.open("w", newline="") as f:
+        with output.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=("status", "artifact", "check", "detail"), delimiter="\t")
             writer.writeheader()
             writer.writerows(self.rows)
@@ -730,7 +730,7 @@ def check_importer_pages(reporter: Reporter) -> None:
         reporter.add("fail", IMPORTER.name, "embedded page payload", "importer is missing")
         return
 
-    importer_text = IMPORTER.read_text()
+    importer_text = IMPORTER.read_text(encoding="utf-8")
     missing_snapshot_markers = [marker for marker in IMPORTER_SNAPSHOT_REQUIRED_MARKERS if marker not in importer_text]
     reporter.pass_if(not missing_snapshot_markers, IMPORTER.name, "snapshot controls", "pre-import snapshot controls present", "missing: " + "; ".join(missing_snapshot_markers))
 
@@ -780,7 +780,7 @@ def check_as3_media(reporter: Reporter) -> None:
     if not MEDIA_MANIFEST.exists():
         reporter.add("fail", MEDIA_MANIFEST.name, "manifest readable", "missing")
         return
-    with MEDIA_MANIFEST.open(newline="") as f:
+    with MEDIA_MANIFEST.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f, delimiter="\t"))
 
     manifest_files = {row.get("optimized_file", "") for row in rows}
@@ -813,7 +813,7 @@ def check_as3_media(reporter: Reporter) -> None:
     if not AS3_MEDIA_SECTION.exists():
         reporter.add("fail", AS3_MEDIA_SECTION.name, "section readable", "missing")
         return
-    section = AS3_MEDIA_SECTION.read_text()
+    section = AS3_MEDIA_SECTION.read_text(encoding="utf-8")
     missing_section_tokens = [token for token in sorted(EXPECTED_MEDIA_TOKENS) if token not in section]
     forbidden = [marker for marker in FORBIDDEN_PAGE_MARKERS if present(section, marker)]
     reporter.pass_if(not missing_section_tokens, AS3_MEDIA_SECTION.name, "section tokens", "all expected tokens present", "missing: " + "; ".join(missing_section_tokens))
@@ -826,7 +826,7 @@ def check_lab_media(reporter: Reporter) -> None:
     if not importer.exists():
         reporter.add("fail", importer.name, "lab media importer readable", "missing")
     else:
-        text = importer.read_text()
+        text = importer.read_text(encoding="utf-8")
         missing_markers = [marker for marker in LAB_MEDIA_IMPORTER_REQUIRED_MARKERS if marker not in text]
         reporter.pass_if(not missing_markers, importer.name, "required importer markers", "all required controls present", "missing: " + "; ".join(missing_markers))
         reporter.pass_if("wp_update_post" in text and "--force-update-published" in text, importer.name, "published-page guard", "update path and force flag present", "missing update guard")
@@ -836,7 +836,7 @@ def check_lab_media(reporter: Reporter) -> None:
         reporter.add("fail", LAB_MEDIA_MANIFEST.name, "manifest readable", "missing")
         return
 
-    with LAB_MEDIA_MANIFEST.open(newline="") as f:
+    with LAB_MEDIA_MANIFEST.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f, delimiter="\t"))
 
     files = {row.get("optimized_file", "") for row in rows}
@@ -875,7 +875,7 @@ def check_scoring_matrix(reporter: Reporter) -> None:
         reporter.add("fail", SCORING_TSV.name, "scoring TSV readable", "missing")
         return
 
-    with SCORING_TSV.open(newline="") as f:
+    with SCORING_TSV.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         rows = list(reader)
         fieldnames = tuple(reader.fieldnames or ())
@@ -905,14 +905,14 @@ def check_scoring_matrix(reporter: Reporter) -> None:
         reporter.add("fail", SCORING_JSON.name, "scoring JSON readable", "missing")
     else:
         try:
-            json_rows = json.loads(SCORING_JSON.read_text())
+            json_rows = json.loads(SCORING_JSON.read_text(encoding="utf-8"))
         except json.JSONDecodeError as exc:
             reporter.add("fail", SCORING_JSON.name, "json parse", str(exc))
         else:
             reporter.pass_if(isinstance(json_rows, list) and len(json_rows) == len(rows), SCORING_JSON.name, "json parity", "JSON row count matches TSV", "JSON row count mismatch")
 
     if IMPORTER.exists():
-        importer_text = IMPORTER.read_text()
+        importer_text = IMPORTER.read_text(encoding="utf-8")
         reporter.pass_if("Current Simply Rest Lab Score Database" in importer_text, IMPORTER.name, "score database table", "Lab page includes score database", "missing score database table")
         reporter.pass_if("Simply Rest Lab Score:</strong> 10/10" in importer_text, IMPORTER.name, "AS3 visible score", "AS3 page shows 10/10", "AS3 visible score is not 10/10")
         reporter.pass_if('"ratingValue": "10"' in importer_text, IMPORTER.name, "AS3 review rating", "Review schema ratingValue is 10", "AS3 Review schema ratingValue is not 10")
@@ -943,7 +943,7 @@ def check_official_source_pack(reporter: Reporter) -> None:
     if not OFFICIAL_SOURCE_SUMMARY_TSV.exists():
         reporter.add("fail", OFFICIAL_SOURCE_SUMMARY_TSV.name, "summary TSV readable", "missing")
     else:
-        with OFFICIAL_SOURCE_SUMMARY_TSV.open(newline="") as f:
+        with OFFICIAL_SOURCE_SUMMARY_TSV.open(newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f, delimiter="\t"))
         metric_map = {row.get("metric", ""): row.get("value", "") for row in rows}
         reporter.pass_if(metric_map.get("content_status_rows") == "46", OFFICIAL_SOURCE_SUMMARY_TSV.name, "content row count", "46 rows", f"got {metric_map.get('content_status_rows')}")
@@ -954,7 +954,7 @@ def check_official_source_pack(reporter: Reporter) -> None:
     if not OFFICIAL_SOURCE_SUMMARY_MD.exists():
         reporter.add("fail", OFFICIAL_SOURCE_SUMMARY_MD.name, "summary markdown readable", "missing")
     else:
-        text = OFFICIAL_SOURCE_SUMMARY_MD.read_text()
+        text = OFFICIAL_SOURCE_SUMMARY_MD.read_text(encoding="utf-8")
         required_markers = (
             "Official-source content package copied",
             "Replace affiliate-link placeholders",
@@ -974,7 +974,7 @@ def check_static_preview(reporter: Reporter) -> None:
     html_files = sorted(STATIC_PREVIEW_DIR.glob("*.html"))
     reporter.pass_if(len(html_files) >= 5, STATIC_PREVIEW_DIR.name, "html page count", f"{len(html_files)} html files", f"{len(html_files)} html files")
     for html_file in html_files:
-        text = html_file.read_text()
+        text = html_file.read_text(encoding="utf-8")
         artifact = f"static:{html_file.name}"
         reporter.pass_if("mattress-reviews.htmlamerisleep-as3/" not in text, artifact, "localized AS3 link", "no malformed AS3 local link", "malformed AS3 local link found")
         reporter.pass_if("drive.google.com" not in text and "docs.google.com" not in text, artifact, "private links", "none found", "private link marker found")
@@ -985,7 +985,7 @@ def check_launch_gate(reporter: Reporter) -> None:
         reporter.add("fail", LAUNCH_GATE.name, "launch gate readable", "missing")
         return
 
-    text = LAUNCH_GATE.read_text()
+    text = LAUNCH_GATE.read_text(encoding="utf-8")
     missing_markers = [marker for marker in LAUNCH_GATE_REQUIRED_MARKERS if marker not in text]
     forbidden_markers = [marker for marker in LAUNCH_GATE_FORBIDDEN_WRITE_MARKERS if marker in text]
     reporter.pass_if(not missing_markers, LAUNCH_GATE.name, "required gate markers", "all required controls present", "missing: " + "; ".join(missing_markers))
@@ -999,7 +999,7 @@ def check_rollback_helper(reporter: Reporter) -> None:
         reporter.add("fail", ROLLBACK.name, "rollback helper readable", "missing")
         return
 
-    text = ROLLBACK.read_text()
+    text = ROLLBACK.read_text(encoding="utf-8")
     missing_markers = [marker for marker in ROLLBACK_REQUIRED_MARKERS if marker not in text]
     forbidden_markers = [marker for marker in ROLLBACK_FORBIDDEN_MARKERS if marker in text]
     reporter.pass_if(not missing_markers, ROLLBACK.name, "required rollback markers", "all required rollback controls present", "missing: " + "; ".join(missing_markers))
@@ -1015,7 +1015,7 @@ def check_as3_redirect_cleanup(reporter: Reporter) -> None:
         reporter.add("fail", AS3_REDIRECT_CLEANUP.name, "redirect cleanup readable", "missing")
         return
 
-    text = AS3_REDIRECT_CLEANUP.read_text()
+    text = AS3_REDIRECT_CLEANUP.read_text(encoding="utf-8")
     missing_markers = [marker for marker in AS3_REDIRECT_CLEANUP_REQUIRED_MARKERS if marker not in text]
     forbidden_markers = [marker for marker in AS3_REDIRECT_CLEANUP_FORBIDDEN_MARKERS if marker in text]
     reporter.pass_if(not missing_markers, AS3_REDIRECT_CLEANUP.name, "required cleanup markers", "all required controls present", "missing: " + "; ".join(missing_markers))
@@ -1030,7 +1030,7 @@ def check_live_qa_checker(reporter: Reporter) -> None:
         reporter.add("fail", LIVE_QA.name, "live QA readable", "missing")
         return
 
-    text = LIVE_QA.read_text()
+    text = LIVE_QA.read_text(encoding="utf-8")
     missing_markers = [marker for marker in LIVE_QA_REQUIRED_MARKERS if marker not in text]
     reporter.pass_if(not missing_markers, LIVE_QA.name, "entity/media validation markers", "all required live QA markers present", "missing: " + "; ".join(missing_markers))
     reporter.pass_if("curl_fetch" in text and "overall_pass" in text, LIVE_QA.name, "live fetch and pass gate", "curl fetch and overall pass gate present", "missing live fetch/pass gate")
@@ -1042,7 +1042,7 @@ def check_goal_audit(reporter: Reporter) -> None:
         reporter.add("fail", GOAL_AUDIT.name, "goal audit script readable", "missing")
         return
 
-    text = GOAL_AUDIT.read_text()
+    text = GOAL_AUDIT.read_text(encoding="utf-8")
     missing_markers = [marker for marker in GOAL_AUDIT_REQUIRED_MARKERS if marker not in text]
     reporter.pass_if(not missing_markers, GOAL_AUDIT.name, "required audit markers", "all required controls present", "missing: " + "; ".join(missing_markers))
 
@@ -1050,7 +1050,7 @@ def check_goal_audit(reporter: Reporter) -> None:
         reporter.add("fail", GOAL_AUDIT_REPORT.name, "goal audit report readable", "missing")
         return
 
-    with GOAL_AUDIT_REPORT.open(newline="") as f:
+    with GOAL_AUDIT_REPORT.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         report_rows = list(reader)
         fieldnames = tuple(reader.fieldnames or ())
@@ -1068,7 +1068,7 @@ def check_goal_audit(reporter: Reporter) -> None:
     )
     live_passes = None
     if LIVE_QA_REPORT.exists():
-        with LIVE_QA_REPORT.open(newline="") as f:
+        with LIVE_QA_REPORT.open(newline="", encoding="utf-8") as f:
             live_rows = list(csv.DictReader(f, delimiter="\t"))
         live_passes = sum(1 for row in live_rows if row.get("overall_pass", "").lower() == "yes")
         if live_rows and live_passes < 5:
@@ -1095,7 +1095,7 @@ def check_goal_audit(reporter: Reporter) -> None:
             )
 
     if LAB_MEDIA_MANIFEST.exists():
-        with LAB_MEDIA_MANIFEST.open(newline="") as f:
+        with LAB_MEDIA_MANIFEST.open(newline="", encoding="utf-8") as f:
             lab_rows = list(csv.DictReader(f, delimiter="\t"))
         has_candidate = any(row.get("approval_status") == "candidate_requires_approval" for row in lab_rows)
         if has_candidate:
@@ -1111,7 +1111,7 @@ def check_goal_audit(reporter: Reporter) -> None:
         reporter.add("fail", GOAL_AUDIT_MARKDOWN.name, "goal audit markdown readable", "missing")
         return
 
-    markdown = GOAL_AUDIT_MARKDOWN.read_text()
+    markdown = GOAL_AUDIT_MARKDOWN.read_text(encoding="utf-8")
     has_production_blockers = any(row.get("status") == "production_blocked" for row in report_rows)
     reporter.pass_if(
         not has_production_blockers or "Production is not launch-ready yet." in markdown,
@@ -1128,7 +1128,7 @@ def check_local_readiness(reporter: Reporter, require_report: bool = True) -> No
         reporter.add("fail", LOCAL_READINESS.name, "local readiness script readable", "missing")
         return
 
-    text = LOCAL_READINESS.read_text()
+    text = LOCAL_READINESS.read_text(encoding="utf-8")
     missing_markers = [marker for marker in LOCAL_READINESS_REQUIRED_MARKERS if marker not in text]
     reporter.pass_if(not missing_markers, LOCAL_READINESS.name, "required readiness markers", "all required controls present", "missing: " + "; ".join(missing_markers))
     reporter.pass_if("shell=True" not in text, LOCAL_READINESS.name, "subprocess shell safety", "does not use shell=True", "shell=True found")
@@ -1142,7 +1142,7 @@ def check_local_readiness(reporter: Reporter, require_report: bool = True) -> No
         reporter.add("fail", LOCAL_READINESS_REPORT.name, "local readiness report readable", "missing")
         return
 
-    with LOCAL_READINESS_REPORT.open(newline="") as f:
+    with LOCAL_READINESS_REPORT.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         rows = list(reader)
         fieldnames = tuple(reader.fieldnames or ())
@@ -1164,7 +1164,7 @@ def check_local_readiness(reporter: Reporter, require_report: bool = True) -> No
         reporter.add("fail", LOCAL_READINESS_MARKDOWN.name, "local readiness markdown readable", "missing")
         return
 
-    markdown = LOCAL_READINESS_MARKDOWN.read_text()
+    markdown = LOCAL_READINESS_MARKDOWN.read_text(encoding="utf-8")
     reporter.pass_if("Go/no-go:" in markdown and "## Blocking Rows" in markdown, LOCAL_READINESS_MARKDOWN.name, "markdown sections", "go/no-go and blocking sections present", "missing required sections")
 
 

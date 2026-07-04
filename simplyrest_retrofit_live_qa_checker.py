@@ -79,7 +79,7 @@ def curl_fetch(url: str, timeout: int) -> tuple[int, str, str]:
         "\\n__SIMPLYREST_STATUS__:%{http_code}\\n__SIMPLYREST_FINAL_URL__:%{url_effective}\\n",
         url,
     ]
-    proc = subprocess.run(cmd, text=True, capture_output=True, check=False)
+    proc = subprocess.run(cmd, text=True, capture_output=True, check=False, encoding="utf-8", errors="replace")
     combined = proc.stdout
     if proc.returncode != 0 and not combined:
         return 0, "", proc.stderr.strip()
@@ -309,7 +309,7 @@ def schema_entity_issues(page: RetrofitPage, schemas: list[Any], body: str) -> l
 
 def load_manifest(path: Path) -> list[RetrofitPage]:
     rows: list[RetrofitPage] = []
-    with path.open(newline="") as f:
+    with path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         required = {"slug", "page_type", "priority", "claim_sensitive"}
         missing = required.difference(reader.fieldnames or ())
@@ -417,16 +417,19 @@ def evaluate_page(page: RetrofitPage, timeout: int) -> dict[str, str]:
     }
 
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--manifest",
-        default="outputs/simplyrest-retrofit-slug-manifest-2026-06-25.tsv",
+        default=str(SCRIPT_DIR / "simplyrest-retrofit-slug-manifest-2026-06-25.tsv"),
         help="Retrofit slug manifest TSV",
     )
     parser.add_argument(
         "--output",
-        default="outputs/simplyrest-retrofit-live-qa-report-2026-06-25.tsv",
+        default=str(SCRIPT_DIR / "simplyrest-retrofit-live-qa-report-2026-06-25.tsv"),
         help="TSV report output path",
     )
     parser.add_argument("--priority", default="", help="Comma-separated priority filter, e.g. P0,P1")
@@ -443,7 +446,7 @@ def main() -> int:
     rows = [evaluate_page(page, args.timeout) for page in pages]
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    with output.open("w", newline="") as f:
+    with output.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter="\t")
         writer.writeheader()
         writer.writerows(rows)

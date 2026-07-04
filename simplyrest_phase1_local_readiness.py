@@ -49,7 +49,18 @@ class StepResult:
 
 
 def run_command(step: str, cmd: list[str], allow_nonzero: bool = False) -> StepResult:
-    proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False)
+    try:
+        proc = subprocess.run(
+            cmd, cwd=ROOT, text=True, capture_output=True, check=False, encoding="utf-8", errors="replace"
+        )
+    except FileNotFoundError as exc:
+        return StepResult(
+            step=step,
+            status="fail",
+            exit_code=127,
+            command=" ".join(cmd),
+            detail=one_line(f"command not found: {exc}"),
+        )
     output = (proc.stdout + "\n" + proc.stderr).strip()
     if proc.returncode == 0:
         status = "pass"
@@ -76,7 +87,7 @@ def one_line(text: str, limit: int = 600) -> str:
 def read_tsv(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
-    with path.open(newline="") as f:
+    with path.open(newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f, delimiter="\t"))
 
 
@@ -136,7 +147,7 @@ def append_report_summaries(results: list[StepResult]) -> list[StepResult]:
 
 def write_tsv(results: list[StepResult], output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
-    with output.open("w", newline="") as f:
+    with output.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=("step", "status", "exit_code", "command", "detail"), delimiter="\t")
         writer.writeheader()
         for result in results:
@@ -181,7 +192,7 @@ def write_markdown(results: list[StepResult], output: Path) -> None:
     for result in results:
         lines.append(f"- `{result.status}` `{result.step}` exit={result.exit_code}: {result.detail}")
     lines.append("")
-    output.write_text("\n".join(lines))
+    output.write_text("\n".join(lines), encoding="utf-8")
 
 
 def main() -> int:

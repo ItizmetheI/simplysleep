@@ -94,14 +94,14 @@ class Reporter:
 
     def write(self, path: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
-        with path.open("w", newline="") as f:
+        with path.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=("status", "artifact", "check", "detail"), delimiter="\t")
             writer.writeheader()
             writer.writerows(self.rows)
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
-    with path.open(newline="") as f:
+    with path.open(newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f, delimiter="\t"))
 
 
@@ -222,8 +222,8 @@ def check_internal_linking_map(reporter: Reporter, manifest_rows: list[RetrofitR
 
 
 def check_retrofit_scripts(reporter: Reporter) -> None:
-    batch = RETROFIT_BATCH.read_text() if RETROFIT_BATCH.exists() else ""
-    live_qa = RETROFIT_LIVE_QA.read_text() if RETROFIT_LIVE_QA.exists() else ""
+    batch = RETROFIT_BATCH.read_text(encoding="utf-8") if RETROFIT_BATCH.exists() else ""
+    live_qa = RETROFIT_LIVE_QA.read_text(encoding="utf-8") if RETROFIT_LIVE_QA.exists() else ""
     reporter.pass_if("SR-RETROFIT-MODULE-START" in batch, RETROFIT_BATCH.name, "retrofit module marker", "present", "missing")
     reporter.pass_if("Affiliate disclosure" in batch, RETROFIT_BATCH.name, "affiliate disclosure module", "present", "missing")
     reporter.pass_if("Health note" in batch and "not substitutes for medical care" in batch, RETROFIT_BATCH.name, "medical limitation module", "present", "missing")

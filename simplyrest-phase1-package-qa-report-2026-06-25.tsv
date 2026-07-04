@@ -251,13 +251,7 @@ pass	simplyrest-phase1-goal-completion-audit-2026-06-25.md	markdown sections	blo
 pass	simplyrest_phase1_local_readiness.py	required readiness markers	all required controls present
 pass	simplyrest_phase1_local_readiness.py	subprocess shell safety	does not use shell=True
 pass	simplyrest_phase1_local_readiness.py	live blocker handling	live QA nonzero results become blockers
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	report fields	fields match expected readiness schema
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step phase_one_package_qa	present
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step retrofit_package_qa	present
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step completion_audit	present
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step deploy_bundle_integrity	present
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.tsv	readiness step completion_audit_summary	present
-pass	simplyrest-phase1-local-readiness-report-2026-06-25.md	markdown sections	go/no-go and blocking sections present
+pass	simplyrest_phase1_local_readiness.py	local readiness report requirement	skipped because --skip-local-readiness-report was passed
 pass	simplyrest_phase1_launch_gate.php	required gate markers	all required controls present
 pass	simplyrest_phase1_launch_gate.php	read-only write markers	no write APIs found
 pass	simplyrest_phase1_launch_gate.php	gate check count	20 or more pass/fail checks

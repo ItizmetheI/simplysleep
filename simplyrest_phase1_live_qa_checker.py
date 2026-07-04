@@ -112,7 +112,7 @@ def curl_fetch(url: str, timeout: int) -> tuple[int, str, str]:
         "\\n__SIMPLYREST_STATUS__:%{http_code}\\n__SIMPLYREST_FINAL_URL__:%{url_effective}\\n",
         url,
     ]
-    proc = subprocess.run(cmd, text=True, capture_output=True, check=False)
+    proc = subprocess.run(cmd, text=True, capture_output=True, check=False, encoding="utf-8", errors="replace")
     combined = proc.stdout
     if proc.returncode != 0 and not combined:
         return 0, "", proc.stderr.strip()
@@ -458,11 +458,14 @@ def evaluate_page(req: PageRequirement, timeout: int) -> dict[str, str]:
     }
 
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--output",
-        default="outputs/simplyrest-phase1-live-qa-report.tsv",
+        default=str(SCRIPT_DIR / "simplyrest-phase1-live-qa-report-2026-06-25.tsv"),
         help="TSV report output path",
     )
     parser.add_argument("--timeout", type=int, default=20)
@@ -471,7 +474,7 @@ def main() -> int:
     rows = [evaluate_page(req, args.timeout) for req in PAGES]
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    with output.open("w", newline="") as f:
+    with output.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter="\t")
         writer.writeheader()
         writer.writerows(rows)

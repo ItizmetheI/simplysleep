@@ -74,7 +74,7 @@ REQUIRED_BUNDLE_FILES = (
 def read_tsv(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
-    with path.open(newline="") as f:
+    with path.open(newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f, delimiter="\t"))
 
 
@@ -397,7 +397,7 @@ def build_rows() -> list[dict[str, str]]:
 
 def write_tsv(rows: list[dict[str, str]], output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
-    with output.open("w", newline="") as f:
+    with output.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
             fieldnames=(
@@ -465,7 +465,7 @@ def write_markdown(rows: list[dict[str, str]], output: Path) -> None:
     for file in evidence_files:
         lines.append(f"- `{file}`")
     lines.append("")
-    output.write_text("\n".join(lines))
+    output.write_text("\n".join(lines), encoding="utf-8")
 
 
 def main() -> int:
