@@ -17,8 +17,8 @@ from pathlib import Path
 from typing import Iterable
 
 
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUTS = ROOT / "outputs"
+ROOT = Path(__file__).resolve().parent
+OUTPUTS = ROOT
 
 LIVE_QA_REPORT = OUTPUTS / "simplyrest-phase1-live-qa-report-2026-06-25.tsv"
 RETROFIT_LIVE_QA_REPORT = OUTPUTS / "simplyrest-retrofit-live-qa-report-2026-06-25.tsv"
